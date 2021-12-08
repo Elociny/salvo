@@ -18,7 +18,7 @@ export default function Home() {
         let f = await api.inserirNomes(nome);
         alert('inseriu')
 
-        listando();
+        listando(f);
     }
 
     useEffect(()=> {
@@ -49,10 +49,6 @@ export default function Home() {
                 <div className="row">
                     <div className="titulo">
                         Listar
-                    </div>
-
-                    <div className="botao">
-                        <button>OK</button>
                     </div>
                 </div>
 
