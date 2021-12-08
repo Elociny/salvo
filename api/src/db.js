@@ -2,8 +2,6 @@
 
 import initdb from './models/init-models.js';
 
-// import initdb from './models/tb_lista_negra.js'
-
 import Sequelize from 'sequelize';
 const sequelize = new Sequelize(
     'mysql_17753_nsftcc',

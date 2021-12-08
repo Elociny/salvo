@@ -4,8 +4,13 @@ const api = axios.create({
 })
 
 export default class Api {
-    async listarMensagens(idSala) {
-        let r = await api.get(`/chat/${idSala}`);
+    async listarNomes() {
+        let r = await api.get(`/listar`);
+        return r.data;
+    }
+
+    async inserirNomes(id_nome) {
+        let r = await api.post(`/inserir`, {id_nome})
         return r.data;
     }
 }

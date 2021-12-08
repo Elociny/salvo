@@ -1,17 +1,9 @@
 import { Div } from './styled';
 
-import { useState } from 'react';
 
-import Api from '../services/api';
-const api = new Api();
 
 export default function Home() {
-    const [chat, setChat] = useState([]);
-    
-    const atualizar = async () => {
-        const mensagens = await api.listarMensagens(1);
-        setChat(mensagens)
-    }
+ 
 
     return (
         <Div>
@@ -40,7 +32,7 @@ export default function Home() {
                     </div>
 
                     <div className="botao">
-                        <button onClick={atualizar}>OK</button>
+                        <button>OK</button>
                     </div>
                 </div>
 
@@ -52,15 +44,12 @@ export default function Home() {
                                 <th> Nome </th>
                             </tr>
                         </thead>
-                
-                    {chat.map (x =>
                         <tbody>
                             <tr >
-                                <td>{x.tb_nicole.id_nome}</td>
-                                <td>{x.tb_nicole.nm_nome}</td>
+                                <td>1</td>
+                                <td>Nicole</td>
                             </tr>
                         </tbody> 
-                    )}
                     </table>
                 </div>
             </div>

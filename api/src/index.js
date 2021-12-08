@@ -4,6 +4,7 @@ import cors from 'cors'
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
 app.get('/listar', async (req, resp) => {
     try {
@@ -16,7 +17,7 @@ app.get('/listar', async (req, resp) => {
 
 app.post('/inserir', async (req, resp) => {
     try {
-        let id_nome = req.body;
+        let {id_nome} = req.body;
 
         let f = await db.tb_lista_negra.create({
             id_nome: id_nome
